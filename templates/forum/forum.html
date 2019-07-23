@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+        {% for p in object %}
+
+<div class="col-sm-4 col-md-4 mt-5">
+  <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{p.title}}</h5>
+    <p class="card-text">{{p.text}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Writen by {{ p.author }}</li>
+    <li class="list-group-item">On {{p.created_date}}</li>
+    <li class="list-group-item">Published On {{p.published_date}}</li>
+  </ul>
+  </div>
+</div>
+
+        {% endfor %}
+</div>
+
+{% endblock %}
