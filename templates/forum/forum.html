@@ -2,24 +2,32 @@
 
 {% block content %}
 
-<div class="row">
+    <div class="container">
+      <ol class="breadcrumb my-4">
+        <li class="breadcrumb-item active">Posts</li>
+      </ol>
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Posts</th>
+            <th>Author</th>
+            <th>Created-date</th>
+            <th>Published-date</th>
+          </tr>
+        </thead>
+        <tbody>
+
         {% for p in object %}
 
-<div class="col-sm-4 col-md-4 mt-5">
-  <div class="card">
-  <div class="card-body">
-    <h5 class="card-title">{{p.title}}</h5>
-    <p class="card-text">{{p.text}}</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Writen by {{ p.author }}</li>
-    <li class="list-group-item">On {{p.created_date}}</li>
-    <li class="list-group-item">Published On {{p.published_date}}</li>
-  </ul>
-  </div>
-</div>
-
-        {% endfor %}
-</div>
+             <tr>
+              <td>
+                {{ p.title }}
+                <small class="text-muted d-block">{{ p.text }}</small>
+              </td>
+              <td class="align-middle">{{ p.author }}</td>
+              <td class="align-middle">{{p.created_date}}</td>
+              <td class="align-middle">{{p.published_date}}</td>
+            </tr>
+{% endfor %}
 
 {% endblock %}

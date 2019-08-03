@@ -4,7 +4,7 @@ from .models import Post
 
 def forum(request):
     data = Post.objects.all()
-    context={
-        'object':data
+    context = {
+        'object': data
     }
-    return render(request, 'forum/forum.html',context)
+    return render(request, 'forum/forum.html', context)
